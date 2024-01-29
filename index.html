@@ -9,6 +9,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    
     <!-- Custom CSS -->
     <style>
         /* Add your custom styles here */
@@ -30,7 +31,12 @@
 
         .navbar-toggler-icon {
             background-color: #ffffff;
-            transition: background-color 0.3s ease-in-out;
+            border: 1px solid #ffffff;
+        }
+
+        .navbar-toggler-icon.collapsed {
+            background-color: transparent;
+            border: 1px solid #ffffff;
         }
 
         .jumbotron {
@@ -85,7 +91,13 @@
             width: 100%;
             height: auto;
         }
+
+        .skill-icon {
+            font-size: 48px;
+            margin-right: 10px;
+        }
     </style>
+
 </head>
 
 <body>
@@ -147,6 +159,46 @@
             </div>
         </div>
     </section>
+<!-- Skills Section -->
+<section id="skills" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="display-4 text-center mb-4">My Skills</h2>
+        <div class="row">
+            <!-- Frontend Skills Card -->
+            <div class="col-lg-4">
+                <div class="card mb-4">
+                    <div class="card-body text-center">
+                        <h3 class="mb-3">Frontend</h3>
+                        <i class="fab fa-react skill-icon"></i>
+                        <i class="fab fa-html5 skill-icon"></i>
+                        <i class="fab fa-css3 skill-icon"></i>
+                        <i class="fab fa-js skill-icon"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- Backend Skills Card -->
+            <div class="col-lg-4">
+                <div class="card mb-4">
+                    <div class="card-body text-center">
+                        <h3 class="mb-3">Backend</h3>
+                        <i class="fab fa-node-js skill-icon"></i>
+                        <i class="fab fa-java skill-icon"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- Databases Skills Card -->
+            <div class="col-lg-4">
+                <div class="card mb-4">
+                    <div class="card-body text-center">
+                        <h3 class="mb-3">Databases</h3>
+                        <i class="fab fa-mongodb skill-icon" title="MongoDB"></i>
+                        <i class="fas fa-database skill-icon" title="MySQL"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="py-5">
@@ -227,7 +279,8 @@
                                 <img src="./images/learning-sidebar.jpg" alt="Project 3 Image 2" class="d-block w-100">
                             </div>
                             <div class="carousel-item">
-                                <img src="./images/myblog-home.jpg" alt="Project 2 Image 3" class="d-block w-100">
+                                <img src="./images/learning-dashboard.jpg" alt="Project 2 Image 3"
+                                    class="d-block w-100">
                             </div>
                             <div class="carousel-item">
                                 <img src="./images/learning-profile.jpg" alt="Project 2 Image 3" class="d-block w-100">
@@ -298,12 +351,21 @@
 
         // Change hamburger icon color when collapsed
         $(window).scroll(function () {
+            updateNavbarColor();
+        });
+
+        // Initial call to set the color based on the page load
+        updateNavbarColor();
+
+        function updateNavbarColor() {
             if ($('.navbar').offset().top > 50) {
+                // When collapsed
                 $('.navbar-toggler-icon').css('background-color', '#333');
             } else {
+                // When expanded
                 $('.navbar-toggler-icon').css('background-color', '#ffffff');
             }
-        });
+        }
     </script>
 
     <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel"
