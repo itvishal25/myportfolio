@@ -10,94 +10,93 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     
-    <!-- Custom CSS -->
     <style>
         /* Add your custom styles here */
         body {
             background-color: #f8f9fa;
         }
-
+    
         .navbar {
-            background-color: transparent;
+            background-color: #343a40; /* Set your desired background color */
         }
-
+    
         .navbar-nav .nav-link {
             color: #ffffff !important;
         }
-
+    
         .navbar-nav .nav-link:hover {
             color: #e9ecef !important;
         }
-
+    
         .navbar-toggler-icon {
             background-color: #ffffff;
             border: 1px solid #ffffff;
         }
-
+    
         .navbar-toggler-icon.collapsed {
             background-color: transparent;
             border: 1px solid #ffffff;
         }
-
+    
         .jumbotron {
             background-color: #343a40;
             color: #ffffff;
             padding: 80px 0;
         }
-
+    
         .portfolio-item {
             margin-bottom: 30px;
             transition: transform 0.3s ease-in-out;
         }
-
+    
         .portfolio-item:hover {
             transform: scale(1.05);
         }
-
+    
         .social-icons a {
             color: #007bff;
             margin: 0 10px;
             font-size: 24px;
             transition: color 0.3s ease-in-out;
         }
-
+    
         .social-icons a:hover {
             color: #0056b3;
         }
-
+    
         .name-animation {
             animation: fadeInUp 1s ease-out;
         }
-
+    
         @keyframes fadeInUp {
             0% {
                 opacity: 0;
                 transform: translateY(20px);
             }
-
+    
             100% {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-
+    
         .carousel-inner img {
             width: 100%;
             height: 100%;
         }
-
+    
         /* Additional styles for the image modal */
         .modal-content img {
             width: 100%;
             height: auto;
         }
-
+    
         .skill-icon {
             font-size: 48px;
             margin-right: 10px;
         }
     </style>
-
+    
 </head>
 
 <body>
@@ -133,12 +132,13 @@
             <p class="lead">Web Developer | MERN Stack Developer | Creative Thinker</p>
             <div class="social-icons">
                 <a href="https://github.com/itvishal25" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/vishal-parmar-9582b2171/" target="_blank" title="LinkedIn"><i
-                        class="fab fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com/in/vishal-parmar-9582b2171/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
             </div>
+            <!-- Add the "Download Resume" button -->
+            <a href="./images/Vishal-Parmar-Resume.pdf" download="Vishal_Parmar_Resume.pdf" class="btn btn-primary mt-3">Download Resume</a>
         </div>
     </header>
-
+    
     <!-- About Section -->
     <section id="about" class="py-5">
         <div class="container">
@@ -348,25 +348,26 @@
             $('#imageModal').find('img').attr('src', modalImg);
             $('#imageModal').modal('show');
         });
-
+    
         // Change hamburger icon color when collapsed
         $(window).scroll(function () {
             updateNavbarColor();
         });
-
+    
         // Initial call to set the color based on the page load
         updateNavbarColor();
-
+    
         function updateNavbarColor() {
             if ($('.navbar').offset().top > 50) {
                 // When collapsed
-                $('.navbar-toggler-icon').css('background-color', '#333');
+                $('.navbar-toggler-icon').css('background-color', '#343a40');
             } else {
                 // When expanded
-                $('.navbar-toggler-icon').css('background-color', '#ffffff');
+                $('.navbar-toggler-icon').css('background-color', '#343a40');
             }
         }
     </script>
+    
 
     <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel"
         aria-hidden="true">
